@@ -1,37 +1,67 @@
-## Welcome to GitHub Pages
+# ContractShark webFSM
 
-You can use the [editor on GitHub](https://github.com/contractshark/fsolidm/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## FSolidM
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+> Correct-by-Design Smart Contracts - The FSolidM / VeriSolid framework
 
-### Markdown
+This repository contains a fork of the implementation of the FSolidM / VeriSolid framework, which allows designing and generating secure Solidity smart contracts. FSolidM / VeriSolid is built on [WebGME](http://github.com/webgme/webgme). 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+An original version is available of FSolidM is available online on [CPS-VO](http://cps-vo.org/group/SmartContracts) for non-commercial and academic use.
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+## Install 
 
-1. Numbered
-2. List
+### Requirements
 
-**Bold** and _Italic_ and `Code` text
+```bash
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
 
-[Link](url) and ![Image](src)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+source ~/.bashrc
+sudo apt update
+nvm install 10
+
+sudo apt install mongodb-clients
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+sudo apt-get update
+
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+sudo apt-get install -y mongodb-org
+
+ps --no-headers -o comm 1
+
+npm i -g bower 
+npm i -g pm2
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+## Features
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/contractshark/fsolidm/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* Collaborative, automatically versioned web-based development.
 
-### Support or Contact
+![Project history view with branching and tagging](../img/S1.png)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+* Dedicated Transition System Editors. In the upper left corner you can see the plugins offered by the tool for: 1) adding functionality through design patterns; 2) generating Solidity code and 3) verifying smart contracts.
+
+![TS model editors](../img/S2.png)
+
+* Fully integrated Solidity code development.
+
+![Solidity development](../img/S3.png)
+
+* Templates for writing security properties in natural language when running the VerifyContract plugin. If no property is specified the tool still verifies deadlock-freedom. 
+
+![Safety properties](../img/S4.png)
+
+* The verification results are returned to the user. If a security property is not true, FSolidM returns a counter-example that invalidates the property.
+
+![Verification](../img/S5.png)
+
+* Embeddable documentation at every level of the model.
+
