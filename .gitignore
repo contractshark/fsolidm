@@ -33,7 +33,7 @@ build/Release
 node_modules
 tmp/
 blob-local-storage/
-src/bower_components/
-package-lock.json
+#src/bower_components/
+#package-lock.json
 #verificationTools/nuXmv
 *.sol
