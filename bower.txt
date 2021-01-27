@@ -1,0 +1,4 @@
+bower check-new     Checking for new versions of the project dependencies...
+smart-contracts /home/ubuntu/smart-contracts
+├── codemirror#5.58.2
+└── pegjs#0.10.0

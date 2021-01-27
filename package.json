@@ -1,7 +1,11 @@
 {
-  "name": "smartcontracts",
+  "name": "contractshark-webgm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "node ./node_modules/mocha/bin/mocha --recursive test",
     "apply": "node ./node_modules/webgme/src/bin/apply.js",
     "diff": "node ./node_modules/webgme/src/bin/diff.js",
@@ -13,17 +17,24 @@
     "users": "node ./node_modules/webgme/src/bin/usermanager.js",
     "clean_up": "node ./node_modules/webgme/src/bin/clean_up.js"
   },
-  "version": "1.0.0",
-  "peerDependencies": {
-    "webgme": "^2.0.0"
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "mongodb": "3.6.2",
+    "nodemon": "^1.19.1",
+    "solc": "^0.5.17",
+    "web3": "^1.3.0",
+    "webgme": "^2.42.0",
+    "webgme-cli": "^2.8.3"
   },
   "devDependencies": {
     "mocha": "^2.2.5",
     "rimraf": "^2.4.0",
     "chai": "^3.0.0"
   },
-  "dependencies": {
-    "webgme": "^2.23.0"
-  },
-  "license": "MIT"
+  "peerDependencies": {
+    "webgme": "^2.0.0"
+  }
 }
